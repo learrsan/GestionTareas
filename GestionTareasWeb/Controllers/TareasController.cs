@@ -39,11 +39,46 @@ namespace GestionTareasWeb.Controllers
                         Vencimiento = (DateTime) item["Vencimiento"],
                         Finalizada = (bool) item["Finalizada"]
                     };
+                    tareas.Add(t);
                 }
             }
 
 
             return View(tareas);
         }
+
+        public ActionResult Alta()
+        {
+            return View(new MiTarea());
+        }
+
+        [HttpPost]
+        public ActionResult Alta(MiTarea tarea)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(tarea);
+            }
+            var url = Session["SPAppUrl"].ToString();
+
+            using (ClientContext ctx = new ClientContext(url))
+            {
+                ctx.Credentials = GestionCuentas.GetCredentials();
+                var lista = ctx.Web.Lists.GetByTitle("MisTareas");
+                ctx.Load(lista);
+                var itemC = new ListItemCreationInformation();
+                var item = lista.AddItem(itemC);
+                item["Tarea"] = tarea.Tarea;
+                item["Descripcion"] = tarea.Descripcion;
+                item["Vencimiento"] = tarea.Vencimiento;
+                item["Finalizada"] = tarea.Finalizada;
+
+                item.Update();
+                ctx.ExecuteQuery();
+            }
+            return RedirectToAction("Index");
+
+        }
     }
+
 }
