@@ -5,7 +5,6 @@
     <FieldRefs>
       <FieldRef ID="{9505319e-3a1e-455a-a810-2af1eac2a007}" DisplayName="Tarea" Required="TRUE" Name="Tarea" />
       <FieldRef ID="{19a705fd-fdef-452c-8151-235fb54680da}" DisplayName="Descripcion" Required="FALSE" Name="Descripcion" />
-      <FieldRef ID="{d5fda523-179b-4a1c-bdae-dab8d342ea5c}" DisplayName="Vencimiento" Required="TRUE" Name="Vencimiento" />
       <FieldRef ID="{882cb1d8-db57-45d7-8ee2-9fc42f1609cf}" DisplayName="Finalizada" Required="TRUE" Name="Finalizada" />
     </FieldRefs>
   </ContentType>

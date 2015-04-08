@@ -36,7 +36,7 @@ namespace GestionTareasWeb.Controllers
                         ID = item.Id,
                         Descripcion = (string) item["Descripcion"],
                         Tarea = (string) item["Tarea"],
-                        Vencimiento = (DateTime) item["Vencimiento"],
+                        //Vencimiento = (DateTime) item["Vencimiento"],
                         Finalizada = (bool) item["Finalizada"]
                     };
                     tareas.Add(t);
@@ -55,11 +55,24 @@ namespace GestionTareasWeb.Controllers
         [HttpPost]
         public ActionResult Alta(MiTarea tarea)
         {
-            if (!ModelState.IsValid)
+            var t = Request.Form["Tarea"];
+            var d = Request.Form["Descripcion"];
+            var f = false;
+            try
             {
-                return View(tarea);
+                f = Boolean.Parse(Request.Form["Finalizada"]);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
             }
             var url = Session["SPAppUrl"].ToString();
+            
+            //if (!ModelState.IsValid)
+            //{
+            //    return View(tarea);
+            //}
+            //var url = Session["SPAppUrl"].ToString();
 
             using (ClientContext ctx = new ClientContext(url))
             {
@@ -70,7 +83,7 @@ namespace GestionTareasWeb.Controllers
                 var item = lista.AddItem(itemC);
                 item["Tarea"] = tarea.Tarea;
                 item["Descripcion"] = tarea.Descripcion;
-                item["Vencimiento"] = tarea.Vencimiento;
+                //item["Vencimiento"] = tarea.Vencimiento;
                 item["Finalizada"] = tarea.Finalizada;
 
                 item.Update();

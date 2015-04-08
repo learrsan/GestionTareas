@@ -15,9 +15,9 @@ namespace GestionTareasWeb.Controllers
             if (Session["SPAppUrl"] == null && Session["SPHostUrl"] == null)
             {
                 
-                 if (Request.QueryString["SPAppUrl"] != null)
+                 if (Request.QueryString["SPAppWebUrl"] != null)
                  {
-                     Session["SPAppUrl"] = Request.QueryString["SPAppUrl"];
+                     Session["SPAppUrl"] = Request.QueryString["SPAppWebUrl"];
                  }
                  if (Request.QueryString["SPHostUrl"] != null)
                  {
