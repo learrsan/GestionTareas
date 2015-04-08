@@ -9,42 +9,27 @@ namespace GestionTareasWeb.Controllers
 {
     public class HomeController : Controller
     {
-        [SharePointContextFilter]
+        
         public ActionResult Index()
         {
-            User spUser = null;
-
-            var spContext = SharePointContextProvider.Current.GetSharePointContext(HttpContext);
-
-            using (var clientContext = spContext.CreateUserClientContextForSPHost())
+            if (Session["SPAppUrl"] == null && Session["SPHostUrl"] == null)
             {
-                if (clientContext != null)
-                {
-                    spUser = clientContext.Web.CurrentUser;
-
-                    clientContext.Load(spUser, user => user.Title);
-
-                    clientContext.ExecuteQuery();
-
-                    ViewBag.UserName = spUser.Title;
-                }
+                
+                 if (Request.QueryString["SPAppUrl"] != null)
+                 {
+                     Session["SPAppUrl"] = Request.QueryString["SPAppUrl"];
+                 }
+                 if (Request.QueryString["SPHostUrl"] != null)
+                 {
+                     Session["SPHostUrl"] = Request.QueryString["SPHostUrl"];
+                 }
+           
             }
+            
+            return RedirectToAction("Index", "Tareas");
 
-            return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        
     }
 }
