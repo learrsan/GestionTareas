@@ -8,10 +8,10 @@ namespace GestionTareasWeb.Models
 {
     public class MiTarea
     {
-        public String ID { get; set; }
+        public int ID { get; set; }
         [Required]
         public String Tarea { get; set; }
-        public String Descriocion { get; set; }
+        public String Descripcion { get; set; }
         [Required]
         public DateTime Vencimiento { get; set; }
         [Required]       
