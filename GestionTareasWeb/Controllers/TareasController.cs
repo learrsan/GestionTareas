@@ -81,10 +81,10 @@ namespace GestionTareasWeb.Controllers
                 ctx.Load(lista);
                 var itemC = new ListItemCreationInformation();
                 var item = lista.AddItem(itemC);
-                item["Tarea"] = tarea.Tarea;
-                item["Descripcion"] = tarea.Descripcion;
+                item["Tarea"] = t;
+                item["Descripcion"] = d;
                 //item["Vencimiento"] = tarea.Vencimiento;
-                item["Finalizada"] = tarea.Finalizada;
+                item["Finalizada"] = f;
 
                 item.Update();
                 ctx.ExecuteQuery();
