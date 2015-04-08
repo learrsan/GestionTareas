@@ -46,6 +46,20 @@
     <Content Include="AppIcon.png">
       <OpcRelationship>manifest-icon</OpcRelationship>
     </Content>
+    <Content Include="Descripcion\Elements.xml" />
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="Finalizada\Elements.xml" />
+    <Content Include="MisTareas\Elements.xml" />
+    <Content Include="MisTareas\MisTareasInstance\Elements.xml" />
+    <Content Include="MisTareas\Schema.xml" />
+    <Content Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </Content>
+    <Content Include="Tarea\Elements.xml" />
+    <Content Include="TipoTarea\Elements.xml" />
+    <Content Include="Vencimiento\Elements.xml" />
   </ItemGroup>
   <ItemGroup>
     <AppManifestFile Include="AppManifest.xml">
@@ -65,6 +79,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Descripcion\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{44c1600c-ff09-420e-b150-a6293464c3aa}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{eb9f8587-ce51-4e7a-9517-956d8d56c139}</FeatureId>
+    </None>
+    <None Include="Finalizada\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e4205220-0b55-46e0-aefa-feffbf1c4eaa}</SharePointProjectItemId>
+    </None>
+    <None Include="MisTareas\MisTareasInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9592747e-cdaf-4b86-8c8a-e8c1cc6af106}</SharePointProjectItemId>
+    </None>
+    <None Include="MisTareas\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b48723d6-3ebd-4512-a2ed-6d7aa3467254}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{ae910568-6105-4082-9a54-001a09853da1}</PackageId>
+    </None>
+    <None Include="Tarea\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ae3723d4-ed91-4e31-ba0a-71450d0cf1e5}</SharePointProjectItemId>
+    </None>
+    <None Include="TipoTarea\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{898b26ed-ddcc-4bbe-9b00-a5622743ab7d}</SharePointProjectItemId>
+    </None>
+    <None Include="Vencimiento\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d41cc496-13a7-429e-ae88-4a8fb76246ac}</SharePointProjectItemId>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

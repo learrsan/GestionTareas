@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{882cb1d8-db57-45d7-8ee2-9fc42f1609cf}"
+       Name="Finalizada"
+       DisplayName="Finalizada"
+       Type="Boolean"
+       Required="TRUE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

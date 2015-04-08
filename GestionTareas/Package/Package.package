@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="adf8ceef-a3d3-4014-905e-1946f55c8700" solutionId="adf8ceef-a3d3-4014-905e-1946f55c8700" resetWebServer="false" sharePointProductVersion="16.0" name="GestionTareas" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="eb9f8587-ce51-4e7a-9517-956d8d56c139" />
+  </features>
+</package>

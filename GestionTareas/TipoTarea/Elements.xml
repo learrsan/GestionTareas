@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Elemento (0x01) -->
+  <ContentType ID="0x0100E277EFABD68B47B49DEDF449634044A5" Name="TipoTarea" Group="Custom Content Types" Description="My Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{9505319e-3a1e-455a-a810-2af1eac2a007}" DisplayName="Tarea" Required="TRUE" Name="Tarea" />
+      <FieldRef ID="{19a705fd-fdef-452c-8151-235fb54680da}" DisplayName="Descripcion" Required="FALSE" Name="Descripcion" />
+      <FieldRef ID="{d5fda523-179b-4a1c-bdae-dab8d342ea5c}" DisplayName="Vencimiento" Required="TRUE" Name="Vencimiento" />
+      <FieldRef ID="{882cb1d8-db57-45d7-8ee2-9fc42f1609cf}" DisplayName="Finalizada" Required="TRUE" Name="Finalizada" />
+    </FieldRefs>
+  </ContentType>
+</Elements>
